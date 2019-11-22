@@ -14,9 +14,64 @@ namespace Sheet3Game
 
     class Program
     {
+        static ConsoleColor RandomColor()
+        {
+            Random randomGenerator = new Random();
+            int rColor = randomGenerator.Next(1, 6);
+            switch (rColor)
+            {
+                case 1:
+                    return ConsoleColor.DarkYellow;
+                    
+                case 2:
+                    return ConsoleColor.DarkRed;
+                    
+                case 3:
+                    return ConsoleColor.White;
+                    
+                case 4:
+                    return ConsoleColor.DarkGray;
+                    
+                case 5:
+                    return ConsoleColor.DarkCyan;
+                    
+                case 6:
+                    return ConsoleColor.DarkGray;
+                    
+            }
+            return 0;
+        }
+
+        static char RandomEnemie()
+        {
+            Random randomGenerator = new Random();
+            int rColor = randomGenerator.Next(1, 6);
+            switch (rColor)
+            {
+                case 1:
+                    return '^';
+                    
+                case 2:
+                    return '@';
+                    
+                case 3:
+                    return '*';
+                    
+                case 4:
+                    return '$';
+
+                case 5:
+                    return '&';
+
+                case 6:
+                    return '+';       
+            }
+            return 'a';
+        }
+
         static void SetBackgroundColor()
         {
-            Console.BackgroundColor = ConsoleColor.DarkMagenta;
+            Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear(); //Important!
         }
 
@@ -44,7 +99,7 @@ namespace Sheet3Game
 
 
             Object player = new Object();
-            player.x = 2; // Starting x
+            player.x = playfieldWidth/2; // Starting x
             player.y = Console.WindowHeight - 1; // Starting y
             player.c = 'O'; // Object Char
             player.color = ConsoleColor.Yellow;
@@ -61,26 +116,13 @@ namespace Sheet3Game
 
                 // Enemie Settings
                 Object enemie = new Object();
-                int rColor = randomGenerator.Next(1, 4);
+                int rColor = randomGenerator.Next(1, 7);
                 // Random color picker
-                switch (rColor)
-                {
-                    case 1:
-                        enemie.color = ConsoleColor.DarkYellow;
-                        break;
-                    case 2:
-                        enemie.color = ConsoleColor.DarkRed;
-                        break;
-                    case 3:
-                        enemie.color = ConsoleColor.White;
-                        break;
-                    case 4:
-                        enemie.color = ConsoleColor.DarkGray;
-                        break;
-                }
+                enemie.color = RandomColor();
+                // Random enemie char picker
+                enemie.c = RandomEnemie();
                 enemie.x = randomGenerator.Next(0, playfieldWidth);
                 enemie.y = 0;
-                enemie.c = '#';
                 objects.Add(enemie);
 
                 // User Input
@@ -122,7 +164,7 @@ namespace Sheet3Game
                         PrintStringOnPosition(9, 12, "Press [enter] to get a life", ConsoleColor.White);
                         Console.ReadLine();
                         Console.Clear();
-                        PrintStringOnPosition(10, 10, "Syke!! You have no life X_x", ConsoleColor.Black);
+                        PrintStringOnPosition(10, 10, "Syke!! You have no life X_x", ConsoleColor.DarkBlue);
                         Console.ReadLine();
                         Environment.Exit(0);
                     }
