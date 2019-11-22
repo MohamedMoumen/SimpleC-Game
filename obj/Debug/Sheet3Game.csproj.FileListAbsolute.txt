@@ -1,0 +1,6 @@
+F:\College Stuff\C# Sheets\Sheet3Game\Sheet3Game\bin\Debug\Sheet3Game.exe.config
+F:\College Stuff\C# Sheets\Sheet3Game\Sheet3Game\obj\Debug\Sheet3Game.csprojResolveAssemblyReference.cache
+F:\College Stuff\C# Sheets\Sheet3Game\Sheet3Game\bin\Debug\Sheet3Game.exe
+F:\College Stuff\C# Sheets\Sheet3Game\Sheet3Game\bin\Debug\Sheet3Game.pdb
+F:\College Stuff\C# Sheets\Sheet3Game\Sheet3Game\obj\Debug\Sheet3Game.exe
+F:\College Stuff\C# Sheets\Sheet3Game\Sheet3Game\obj\Debug\Sheet3Game.pdb
